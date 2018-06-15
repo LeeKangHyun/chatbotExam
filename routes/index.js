@@ -40,7 +40,7 @@ router.post('/message', (req, res) => {
     case '사진':
       send['message']['text'] = '멍이 사진 투척';
       send['message']['photo'] = {
-        'url': `/images/mung/mung-1.jpeg`,
+        'url': `http://khlee.xyz:3000/images/mung/mung-1.jpeg`,
         "width": 640,
         "height": 480
       };
