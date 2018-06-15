@@ -42,7 +42,7 @@ router.post('/message', (req, res) => {
     case '사진':
       send['message']['text'] = '멍이 사진 투척';
       send['message']['photo'] = {
-        'url': `${URL}/images/mung/mung-1.jpg`,
+        'url': `${URL}/images/mung/mung-1.png`,
         "width": 640,
         "height": 480
       };
