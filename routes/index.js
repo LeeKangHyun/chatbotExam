@@ -1,5 +1,7 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const URL = 'http://13.124.209.77:3000';
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -40,7 +42,7 @@ router.post('/message', (req, res) => {
     case '사진':
       send['message']['text'] = '멍이 사진 투척';
       send['message']['photo'] = {
-        'url': `http://khlee.xyz:3000/images/mung/mung-1.jpeg`,
+        'url': `${URL}/images/mung/mung-1.jpeg`,
         "width": 640,
         "height": 480
       };
