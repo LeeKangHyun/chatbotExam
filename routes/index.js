@@ -46,8 +46,10 @@ router.post('/message', (req, res) => {
       };
       break;
     case '나이':
+      send['message']['text'] = '8살!';
       break;
     case '성별':
+      send['message']['text'] = '수컷 (중성화)';
       break;
     default:
       send['message']['text'] = '잘못된 선택입니다.';
