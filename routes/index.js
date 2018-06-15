@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const URL = 'http://13.124.209.77:3000/images/mung/mung-1.png';
+const URL = 'http://13.124.209.77:3000';
 
 
 /* GET home page. */
