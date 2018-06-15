@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const URL = 'http://13.124.209.77:3000';
+const URL = 'http://13.124.209.77:3000/images/mung/mung-1.png';
 
 
 /* GET home page. */
@@ -27,35 +27,37 @@ router.post('/message', (req, res) => {
   };
   
   let send = {
-    "message": {},
-    "keyboard": {
-      "type": "buttons",
-      "buttons": [
-        "사진",
-        "나이",
-        "성별",
-      ]
-    }
+    message: {},
+    keyboard: {},
   };
   
   switch(_obj.content) {
     case '사진':
-      send['message']['text'] = '멍이 사진 투척';
-      send['message']['photo'] = {
-        'url': `${URL}/images/mung/mung-1.png`,
-        "width": 640,
-        "height": 480
+      send.message.text = '멍이 사진 투척';
+      send.message.photo = {
+        url: `${URL}/images/mung/mung-1.png`,
+        width: 640,
+        height: 480
       };
       break;
     case '나이':
-      send['message']['text'] = '8살!';
+      send.message.text = '8살!';
       break;
     case '성별':
-      send['message']['text'] = '수컷 (중성화)';
+      send.message.text = '수컷 (중성화)';
       break;
     default:
-      send['message']['text'] = '잘못된 선택입니다.';
+      send.message.text = '잘못된 선택입니다.';
   }
+  
+  send.keyboard = {
+    "type": "buttons",
+    "buttons": [
+      "사진",
+      "나이",
+      "성별",
+    ]
+  };
   
   res.set({
     'content-type': 'application/json'
